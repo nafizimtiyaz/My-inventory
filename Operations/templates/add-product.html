@@ -1,0 +1,108 @@
+﻿{% extends 'main.html' %}
+{% block body %}
+{% load static %}
+
+    <div class="content-page">
+     <div class="container-fluid add-form-list">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="card">
+                    <div class="card-header d-flex justify-content-between">
+                        <div class="header-title">
+                            <h4 class="card-title">Add Product</h4>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <form method="POST" data-toggle="validator">
+                             {% csrf_token %}
+                            <div class="row">
+<!--                                <div class="col-md-12">-->
+<!--                                    <div class="form-group">-->
+<!--                                        <label>Product Type *</label>-->
+<!--                                        <select name="type" class="selectpicker form-control" data-style="py-0">-->
+<!--                                            <option>Standard</option>-->
+<!--                                            <option>Combo</option>-->
+<!--                                            <option>Digital</option>-->
+<!--                                            <option>Service</option>-->
+<!--                                        </select>-->
+<!--                                    </div> -->
+<!--                                </div>  -->
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Name *</label>
+                                        <input type="text" class="form-control" name="pname" placeholder="Enter Name" data-errors="Please Enter Name." >
+                                        <div class="help-block with-errors"></div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Code *</label>
+                                        <input type="text" class="form-control" placeholder="Enter Code" data-errors="Please Enter Code." >
+                                        <div class="help-block with-errors"></div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Barcode Symbology *</label>
+                                        <select name="type" class="selectpicker form-control" data-style="py-0">
+                                            <option>CREM01</option>
+                                            <option>UM01</option>
+                                            <option>SEM01</option>
+                                            <option>COF01</option>
+                                            <option>FUN01</option>
+                                            <option>DIS01</option>
+                                            <option>NIS01</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Category *</label>
+                                        <select name="type" class="selectpicker form-control" data-style="py-0">
+                                            <option>Beauty</option>
+                                            <option>Grocery</option>
+                                            <option>Food</option>
+                                            <option>Furniture</option>
+                                            <option>Shoes</option>
+                                            <option>Frames</option>
+                                            <option>Jewellery</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Cost *</label>
+                                        <input type="text" class="form-control" name="buying_price" placeholder="Enter Cost" data-errors="Please Enter Cost.">
+                                        <div class="help-block with-errors"></div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Price *</label>
+                                        <input type="text" class="form-control" name="selling_price" placeholder="Enter Price" data-errors="Please Enter Price.">
+                                        <div class="help-block with-errors"></div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label>Quantity *</label>
+
+                                        <input type="number" class="form-control" name="qutity" placeholder="Enter Quantity" required>
+                                        <div class="help-block with-errors"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-primary mr-2">Add Product</button>
+                            <button type="reset" class="btn btn-danger">Reset</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Page end  -->
+    </div>
+      </div>
+    </div>
+    <!-- Wrapper End-->
+   {% endblock body %}

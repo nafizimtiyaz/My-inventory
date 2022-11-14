@@ -1,0 +1,81 @@
+﻿{% extends 'main.html' %}
+{% block body %}
+{%load static%}
+    <div class="content-page">
+     <div class="container-fluid add-form-list">
+        <div class="row">
+            <div class="col-sm-12">
+
+                <div class="card">
+                    <div class="card-header d-flex justify-content-between">
+                        <div class="header-title">
+                            <h4 class="card-title">Add Sale</h4>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <form method="POST" data-toggle="validator">
+                            {% csrf_token %}
+                            <div class="row">                                  
+                                <div class="col-md-6">                      
+                                    <div class="form-group">
+                                        <label>Customer name</label>
+                                        <input type="text" name="customer_name" class="form-control" placeholder="Customer Name">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>customer mobile No *</label>
+                                        <input type="text" name="customer_mobile" class="form-control" placeholder="Enter customer mobile No">
+                                        <div class="help-block with-errors"></div>
+                                    </div>
+                                </div> 
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Product Name</label>
+                                        <input type="text" name="product_name"  value="{{a.name}}" readonly class="form-control">
+
+                                    </div> 
+                                </div>
+                                 <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label>Buying Price*</label>
+                                        <input type="text" name="buying_price" class="form-control" value="{{a.buying_price}} Taka" readonly>
+
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Price</label>
+                                        <input type="text" class="form-control" name="selling_price" placeholder="Enter Customer Name" value="{{a.selling_price}}" readonly >
+                                        <div class="help-block with-errors"></div>
+                                    </div>
+                                </div>   
+                                <div class="col-md-6"> 
+                                    <div class="form-group">
+                                        <label>Amount *</label>
+                                        <input type="text" name="amount" class="form-control" placeholder="Your Have Total {{a.qutity}} pices">
+
+                                    </div>
+                                </div> 
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Order Discount</label>
+                                        <input type="text" class="form-control" name="discount" placeholder="Discount">
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label>Total Amount</label>
+                                        <input type="text" name="total" class="form-control">
+                                    </div>
+                                </div>
+                            </div>                            
+                            <button type="submit" class="btn btn-primary mr-2">Add Sale</button>
+                            <button type="reset" class="btn btn-danger">Reset</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Page end  -->
+{% endblock body %}
